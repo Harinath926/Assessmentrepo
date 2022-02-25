@@ -3,12 +3,14 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-           echo "Hello world"     
+           echo "Hello world"  
+           sh "javac Hello.java"
             }
         }
-        stage('Test') { 
+        stage('execute') { 
             steps {
                echo "test"
+           sh "java Hello"
             }
         }
         stage('Deploy') { 
