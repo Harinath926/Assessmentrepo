@@ -9,13 +9,14 @@ pipeline {
         stage('Build') { 
             steps {
                echo "test"
-           sh "docker build -t my-app:1.0 ."
+           sh "sudo docker build -t my-app:1.0 ."
+           sh "docker images"
             }
         }
         stage('Execute') { 
             steps {
               echo "deploy" 
-           sh "docker run my-app:1.0"
+           sh "sudo docker run my-app:1.0"
             }
         }
     }
