@@ -10,7 +10,6 @@ pipeline {
             steps {
                echo "test"
            sh "sudo docker build -t my-app:1.0 ."
-           sh "docker images"
             }
         }
         stage('Execute') { 
